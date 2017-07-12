@@ -120,3 +120,46 @@ select prod_name from products where id ** like '[ABC]';**
 1. 拼接(+或||)
  SQL Server 使用+   Oracle、PostgreSQL、SQLite使用||
 select name + country from table order by name;
+将原来的列组合起来形成新的字段
+2. 使用别名
+ select name + country ** as title** from table order by name;
+将新的字段命名以便以后使用
+ 
+### 函数
+1. trim/rtrim/ltrim去空格
+2. upper 转化大写
+3. len返回长度
+4. lower转化小写
+5. left 返回字符左边字符串
+6. right返回字符串右边字符串
+7. substr(Oracle、PostgreSQL、SQLite)|substring(MySQL、SQLServer)提取字符串
+8. convert 数据类型转换
+9. abs 绝对值
+10. cos/sin/tan
+11. exp 指数
+12. pi 返回PI
+13. sqrt 平方根
+14. 聚集函数
+15. avg 平均
+16. count统计行数
+17. max/min/sum
+
+### 分组
+1. group by
+select id, count(*) as num_prods from products group by id;
+id | num_prod
+---|---
+ 1 | 5
+ 2 | 3
+ 4 | 6
+ 
+2. having
+select id, count(*) as order from oders group by id having count(*) >=5;
+id | num_prod
+---|---
+ 1 | 5
+ 4 | 6
+ 
+ ###> select 子句顺序
+ select  from  where （group by） having （order by）
+
