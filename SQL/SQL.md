@@ -97,10 +97,26 @@ where id != ‘dell’ order by prod_name;
 
 ### 通配符(like)
 用来匹配值的一部分特殊字符，一般只能应用于文本字符串。
+>SQL的通配符很有用。但这种功能是有代价的，即通配符搜索一般比前面讨论的其他搜索要耗费更长的处理时间。
+
 > 通配符不会匹配NULL
-> 
+
 1. %: 表示字符出现任意次数
 select prod_name from products where **prod_name like ‘fish%’;**
 匹配以fish开头的字符串
 select prod_name from products where ** prod_name like ‘% bean bag%’；**
-匹配任何位置有bean bag的字符串
+匹配任何位置有**bean bag**的字符串
+2. _ :只匹配单个字符
+select prod_name from products where **prod_name like ’_inch‘;**
+匹配首个任意的inch字符
+3. [] : 指定字符集(SQL Server支持)
+select prod_name from products where id ** like '[ABC]';**
+匹配ABC其中之一的字符
+
+
+### 字段(field)
+计算字段在表中不是真是存在的，经过其他字段统计得来的
+
+1. 拼接(+或||)
+ SQL Server 使用+   Oracle、PostgreSQL、SQLite使用||
+select name + country from table order by name;
