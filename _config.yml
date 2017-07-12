@@ -3,4 +3,4 @@ site_name: My_Blog
 pages:
     - Home: index.md
     - About: about.md
-    -SQL:SQL.md
+    - SQL: SQL.md
