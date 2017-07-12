@@ -25,9 +25,8 @@
 1. SELECT
 2. INSERT
 3. delect
-4. 
-5. distinct(过滤)
-6. 
+4. distinct(过滤)
+
 
 
 
