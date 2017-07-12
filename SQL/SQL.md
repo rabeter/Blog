@@ -95,4 +95,12 @@ where not id = ‘dell’ order by prod_name;
 = select prod_name from products 
 where id != ‘dell’ order by prod_name;
 
-### 通配符
+### 通配符(like)
+用来匹配值的一部分特殊字符，一般只能应用于文本字符串。
+> 通配符不会匹配NULL
+> 
+1. %: 表示字符出现任意次数
+select prod_name from products where **prod_name like ‘fish%’;**
+匹配以fish开头的字符串
+select prod_name from products where ** prod_name like ‘% bean bag%’；**
+匹配任何位置有bean bag的字符串
