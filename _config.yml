@@ -1,4 +1,4 @@
-theme: jekyll-theme-dinky
+theme: readthedocs
 site_name: My_Blog
 pages:
     - Home: index.md
