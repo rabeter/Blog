@@ -147,6 +147,7 @@ select name + country from table order by name;
 ### 分组
 1. group by
 select id, count(*) as num_prods from products group by id;
+
 id | num_prod
 ---|---
  1 | 5
