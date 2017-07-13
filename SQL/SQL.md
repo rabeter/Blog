@@ -132,7 +132,7 @@ select name + country from table order by name;
 4. lower转化小写
 5. left 返回字符左边字符串
 6. right返回字符串右边字符串
-7. substr(Oracle、PostgreSQL、SQLite)|substring(MySQL、SQLServer)提取字符串
+7. substr(Oracle、PostgreSQL、SQLite) | substring(MySQL、SQLServer)提取字符串
 8. convert 数据类型转换
 9. abs 绝对值
 10. cos/sin/tan
