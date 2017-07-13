@@ -1,2 +1,57 @@
 
 
+# Spring Boot
+Spring Boot简化了使用Spring的web开发
+使用Maven或者Gadle进行项s目的构建
+提供三个核心简要：
+1. 自动配置
+2. 起步依赖
+3. 无命令界面
+
+## Maven构建
+"""xml
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	"""
+	SpringBoot版本号
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	项目依赖
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	构建插件
+
+
+
+### @SpringBootApplication
+组件扫描 自动配置
+1. @Configuration 基于java配置的spring
+2. @ComponentScan 组件扫描
+3. @EnableAutoConfiguration 自动配置
+
+### @Entity
+表明JPA实体
+
