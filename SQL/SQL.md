@@ -164,4 +164,47 @@ id | num_prod
 ####  select 子句顺序
  select  from  where （group by） having （order by）
 
-### 	子查询
+### 	联结表(join)
+用一条select 语句检索出关联的多表成为联结
+
+select ven_name, prod_name,prod_price from Vendors, products 
+**where Vendors.vend_id = products.vend_id;**
+
+#### 内联结
+内联结也称为等值联结，基于两个表之间的相等测试。
+select vend_name , prod_name,prod_price
+from **vendors inner join products on Vendors.vend_id=products.vend_id;**
+与前一条结果相同
+
+### 表别名
+1. 缩短SQL语句
+2. 允许在一条语句中多次使用相同的表
+SELECT cust_name, cust_contact
+FROM Customers AS C, Orders AS O, OrderItems AS OI
+WHERE C.cust_id = O.cust_id AND OI.order_num = O.order_num AND prod_id = 'RGAN01';
+
+#### 自联结
+引用的同一个表
+SELECT c1.cust_id, c1.cust_name, c1.cust_contact
+FROM Customers AS c1, Customers AS c2
+WHERE c1.cust_name = c2.cust_name
+ AND c2.cust_contact = 'Jim Jones'; 
+#### 自然联结
+检索第一个表中的所有字段
+SELECT C.*, O.order_num, O.order_date,
+ OI.prod_id, OI.quantity, OI.item_price
+FROM Customers AS C, Orders AS O, OrderItems AS OI
+WHERE C.cust_id = O.cust_id
+ AND OI.order_num = O.order_num
+ AND prod_id = 'RGAN01';
+#### 外联结
+将没有关联行的表联结在一起
+SELECT Customers.cust_id, Orders.order_num
+FROM Customers** left outer join** Orders
+ ON Customers.cust_id = Orders.cust_id; 
+ Customers 与Orders没有关联行
+ =SELECT Customers.cust_id, Orders.order_num
+FROM Customers **right outer join** Orders
+ ON **Orders.cust_id = Customers.cust_id;**
+ 
+ 
