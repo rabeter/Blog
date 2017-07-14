@@ -117,7 +117,13 @@ select prod_name from products where **prod_name like ’_inch‘;**
 3. [] : 指定字符集(SQL Server支持)
 select prod_name from products where id ** like '[ABC]';**
 匹配ABC其中之一的字符
+4. [^]:指定非字符集
+select prod_name from products where id ** like '[^ABC]';**
+不匹配ABC字符
 
+### 别名
+表别名
+列别名
 
 ### 字段(field)
 计算字段在表中不是真是存在的，经过其他字段统计得来的
@@ -171,6 +177,10 @@ id | num_prod
 
 ### 	联结表(join)
 用一条select 语句检索出关联的多表成为联结
+1. INNER JOIN：如果表中有至少一个匹配，则返回行
+2. LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行
+3. RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行
+4. FULL JOIN：只要其中一个表中存在匹配，则返回行
 
 select ven_name, prod_name,prod_price from Vendors, products 
 **where Vendors.vend_id = products.vend_id;**
@@ -212,6 +222,14 @@ FROM Customers** left outer join** Orders
 FROM Customers **right outer join** Orders
  ON **Orders.cust_id = Customers.cust_id;**
 
+###  union
+
+### select into(复制)
+
+select * into newTable
+from oldTable
+复制表中内容到新表中
+
 ### 插入(insert into)
 insert into table_name (column1,column2) values (val1,val2);
 向table_name中插入数据
@@ -229,6 +247,9 @@ update table_name set col1=val1,col2=val2
 delete from table_name
 **where col = val;**
 
+
+### create database(创建)
+create database my_db;
 
 
  
