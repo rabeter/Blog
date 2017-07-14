@@ -248,8 +248,11 @@ delete from table_name
 **where col = val;**
 
 
-### create database(创建)
+### create database(创建数据库)
 create database my_db;
+
+### create table(创建表)
+
 
 
  
