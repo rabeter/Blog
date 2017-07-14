@@ -23,8 +23,15 @@
  
 ### 关键字
 1. SELECT
-2. INSERT
-3. delect
+2. INSERT INTO
+3. delete
+4. update
+5. create database
+6. create table
+7. alter database(修改数据库)
+8. alter table(修改表)
+9. create index(创建索引)
+10. drop index(删除索引)
 4. distinct(过滤)
 
 
@@ -39,11 +46,9 @@ select prod_id, prod_name,prod_price from prosucts;
 select * from products；
 检索所有的列(性能问题)，在列名位置情况下可使用查看所有表名。
 
-#### 过滤相同值(distinct)
+#### 检索不同数据(delect distinct)
 
-
-
-select distinct prod_id from Products;
+**select distinct** prod_id from Products;
 distinct 作用于所有的列
 
 #### 限制结果
@@ -206,5 +211,25 @@ FROM Customers** left outer join** Orders
  =SELECT Customers.cust_id, Orders.order_num
 FROM Customers **right outer join** Orders
  ON **Orders.cust_id = Customers.cust_id;**
+
+### 插入(insert into)
+insert into table_name (column1,column2) values (val1,val2);
+向table_name中插入数据
+
+
+### 更新(update)
+
+update table_name set col1=val1,col2=val2
+**where col=val;**
+一定包含where子句，防止作用于全局更新
+
+
+### 删除(delete)
+
+delete from table_name
+**where col = val;**
+
+
+
  
  
