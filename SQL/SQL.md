@@ -152,8 +152,15 @@ select name + country from table order by name;
 13. sqrt 平方根
 14. 聚集函数
 15. avg 平均
-16. count统计行数
+16. count统计行数  
+> select count(distinct id) as nums from tables;统计不同id个数
+
 17. max/min/sum
+18. first/last
+19. now 返回当前时间
+20. format 格式化
+> select format(now(),'%y-%m-%d') as data from web;
+
 
 ### 分组
 1. group by
@@ -252,8 +259,56 @@ delete from table_name
 create database my_db;
 
 ### create table(创建表)
+create table name
+(
+col1 data_type(size),
+col2 data_type(size)
+);
+> create table persons
+> (
+> personID int,
+> name varchar(255)
+> );
+
+### constraints(约束)
+
+1. not null 非空
+2. unique 唯一
+3. primary key 主键
+4. foreign key ？？？
+5. check 符合指定条件
+6. default 默认值
+> create table persons
+> (
+> id int not null,
+> name varchar(255) default 'wang',
+> check (id >1),
+> primary key (id),
+> unique (id)
+> );
 
 
 
- 
+### 视图(views)
+视图是可视化的表
+1. create view
+
+2. create or replace view
+
+3. drop view name
+
+### 数据类型
+
+ 数据类型| Access	|SQLServer	|Oracle|MySQL|	PostgreSQL
+ ---|---|---|---|---|---
+boolean	|Yes/No	|Bit	|Byte	|N/A	|Boolean
+integer|Number(integer)	|Int	|Number	|Int Integer|	Int Integer
+float|	Number (single)|	Float
+Real|Number|	Float	|Numeric
+currency|	Currency|	Money	|N/A	|N/A|	Money
+string (fixed)|	N/A|	Char|	Char|	Char|	Char
+string (variable)	|Text (<256)
+Memo (65k+)	|Varchar|	Varchar
+Varchar2|	Varchar	|Varchar
+binary object|	OLE Object Memo	|Binary (fixed up to 8K)Varbinary (<8K)Image (<2GB)	|Long Raw	|Blob Text	|Binary Varbinary
  
