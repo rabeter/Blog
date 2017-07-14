@@ -3,3 +3,4 @@ site_name: My_Blog
 pages:
     - Home: index.md
     - SQL: SQL.md
+    - java： web.md
