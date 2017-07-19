@@ -52,3 +52,6 @@ getSession创建Session
 getAttribute("userName")获取session值
 invalidate()失效Session
 
+
+
+### JDBC
