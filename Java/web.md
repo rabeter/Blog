@@ -110,4 +110,44 @@ public class LogFilter implements Filter  {
 当一个servlet抛出一个异常时，Web容器会搜索web.xml中使用异常类型元素的配置，使其与抛出的异常类型相匹配。
 web.xml中的error-page元素来指​​定响应某些异常或HTTP 状态代码的servlet的调用。
 
+
 ### JDBC
+
+DriverManager 数据库管理类
+```java
+Class.forName("com.mysql.jdbc.Driver");
+//装载驱动程序
+connection = DriverManager.getConnection(DB_URL,USER,PASS);
+//创建数据链接
+stmtement = connection .createStatement();
+//创建SQL容器stmtement
+ResultSet rs = stmt.executeQuery("select * from table");
+// 创建二维表结构
+while(rs.next()){
+         int id  = rs.getInt("id")；
+         String last = rs.getString("last");
+      }
+//读取数据
+rs.close();
+stmt.close();
+conn.close();
+//关闭链接
+。。。
+//处理异常
+```
+![JDBC](https://github.com/rabeter/Blog/blob/master/img/JDBC.png)
+![ResultSet](https://github.com/rabeter/Blog/blob/master/img/REsultSet.png)
+
+
+#### 游标
+每次读取数据库部分数据进行处理
+
+#### 大对象读取
+使用流方式进行读取数据库内容
+
+#### 批处理
+
+#### mybatis
+MyBatis 是支持定制化 SQL、存储过程以及高级映射的优秀的持久层框架。
+
+每个基于 MyBatis 的应用都是以一个 SqlSessionFactory 的实例为中心的。SqlSessionFactory 的实例可以通过 SqlSessionFactoryBuilder 获得。而 SqlSessionFactoryBuilder 则可以从 XML 配置文件或一个预先定制的 Configuration 的实例构建出 SqlSessionFactory 的实例。
