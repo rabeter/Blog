@@ -312,3 +312,70 @@ Memo (65k+)	|Varchar|	Varchar
 Varchar2|	Varchar	|Varchar
 binary object|	OLE Object Memo	|Binary (fixed up to 8K)Varbinary (<8K)Image (<2GB)	|Long Raw	|Blob Text	|Binary Varbinary
  
+ 
+
+
+## MySQL
+
+数据库是一个以某种有组织的方式存储的数据集合。
+
+### 检索数据
+select name from products;
+检索所有的列
+select * from products;
+
+#### 检索不同的行(select distinct)
+select distinct name from products;
+
+#### 限制结果(limit)
+select name fron products limit 5;
+返回前5行
+select name from products limit 5,5;
+返回从第五行后的5行
+
+#### 排序字段( order by)
+一般放在最后
+select name from products order by name;
+按照name字段进行排序
+select name，id from product order by name, id;
+先按照name在id进行排序
+select id,name from products order by name desc;
+按照降序进行排序desc
+select id, name from product order by name desc,id;
+先降序name，顺序id进行排序
+* 如果在多个列进行降序排序，必须指定每个列DESC关键字 *
+
+select price from products order by price desc limit 1;
+检索出最高值
+
+### 过滤数据
+select name from products
+where price = 5;
+检索过滤出price=5
+
+select name from products where price between 5 and 10;
+检索5到10之间的数据
+select name from products where price is null；
+查找非空值字段
+
+#### 组合过滤
+
+and or not
+
+select id from products where id = 1 and price = 10;
+and 链接过滤条件
+
+in操作符
+select name from products where id in (1,10) order by name;
+使用in替代or操作
+
+select name from products where id not in (10,20) order by name;
+使用not in 代替and 操作
+
+#### 通配符过滤
+- % 表示任何字符串出现任意次数
+- _ 标识任何字符出现一次
+select id from products where name like 'jet%';
+匹配jet开头的字符串
+select id from products where name like '_ ';
+匹配一个字符的字符串
