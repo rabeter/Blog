@@ -40,6 +40,8 @@ JUnit是运用于Java的单元测试框架。JUnit在开发测试驱动开发中
 @After | 该方法在执行每项测试后执行(如执行每一个测试后重置某些变量，删除临时变量等)
 @AfterClass | 当需要执行所有的测试在JUnit测试用例类后执行，AfterClass注解可以使用以清理建立方法，(从数据库如断开连接)。注意：附有此批注(类似于BeforeClass)的方法必须定义为静态。
 @Ignore | 当想暂时禁用特定的测试执行可以使用忽略注释。每个被注解为@Ignore的方法将不被执行。
+
+
 ``` java
 执行顺序
 @BeforeClass: onceExecutedBeforeAll
