@@ -43,7 +43,7 @@ JUnit是运用于Java的单元测试框架。JUnit在开发测试驱动开发中
 
 
 ``` java
-执行顺序
+// 执行顺序
 @BeforeClass: onceExecutedBeforeAll
 
 @Before: executedBeforeEach
