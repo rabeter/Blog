@@ -67,3 +67,18 @@ assertTrue/assertFalse | 断言条件为真或假
 assertNotNull/assertNull | 断言条件为空
 assertSame/assertNotSame | 断言两个对象引用相同/不同的对象
 
+## 测试套件
+
+测试套件是一些测试不同类用例，可以使用@RunWith和@Suite注解运行所有东西在一起。如果有很多测试类，想让它们都运行在同一时间，而不是单一地运行每个测试，这是非常有用的。
+
+当一个类被注解为@RunWith， JUnit 将调用被在其中注解，以便运行测试类，而不使用内置的 JUnit 运行方法。
+``` java
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+// c测试多个用例
+@RunWith(Suite.class)
+@Suite.SuiteClasses({ addTest.class, subTest.class })
+public class SuitTest {
+}
+```
